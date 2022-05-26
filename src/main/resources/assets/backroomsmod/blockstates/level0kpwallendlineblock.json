@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "backroomsmod:block/level0kpwallendlineblock",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "backroomsmod:block/level0kpwallendlineblock"
+    },
+    "facing=south": {
+      "model": "backroomsmod:block/level0kpwallendlineblock",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "backroomsmod:block/level0kpwallendlineblock",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+ "block.backroomsmod.level0kpwallblocka": "Level 0 Yellow Wallpaper (A)",
+ "block.backroomsmod.level0kpwallblockb": "Level 0 Yellow Wallpaper (B)",
+ "block.backroomsmod.level0kplightblock": "Level 0 Light Block",
+ "block.backroomsmod.level0kpfloorblock": "Level 0 Floor Block",
+ "block.backroomsmod.level0kpceilingblock": "Level 0 Ceiling Block",
+ "block.backroomsmod.level0kpwallendblock": "Level 0 Wall End Block",
+ "block.backroomsmod.level0kpwallendlineblock": "Level 0 Wall End Line Block",
+ "block.backroomsmod.level0kpwallendoutletblock": "Level 0 Wall End Outlet Block",
+ "block.backroomsmod.level0kpwalllineblock": "Level 0 Wall Line Block",
+ "block.backroomsmod.level0kpwalloutletblock": "Level 0 Wall Outlet Block",
+
+ "entity.backroomsmod.bacteria": "The Bacteria",
+
+ "itemGroup.backroomsBlocks": "Backrooms: OOB Blocks",
+ "itemGroup.backroomsItems": "Backrooms: OOB Items"
+}
