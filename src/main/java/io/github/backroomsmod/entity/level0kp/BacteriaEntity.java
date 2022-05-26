@@ -49,4 +49,8 @@ public class BacteriaEntity extends Monster {
     @Override
     protected void playStepSound(BlockPos pPos, BlockState pBlock) {
     }
+    protected boolean shouldDespawnInPeaceful() {
+        return true;
+    }
+
 }

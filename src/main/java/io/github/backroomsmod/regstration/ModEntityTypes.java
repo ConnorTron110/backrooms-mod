@@ -27,13 +27,13 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<BacteriaEntity>> BACTERIA =
             registerWithEgg("bacteria", EntityType.Builder.of(BacteriaEntity::new, MobCategory.CREATURE).sized(0.8F, 2F), 0x000000, 0x000000);
 
-    //public static final RegistryObject<EntityType<DeathMothEntity>> DEATHMOTH =
-      //      registerWithEgg("deathmoth", EntityType.Builder.of( DeathMothEntity::new, MobCategory.CREATURE).sized(0.8F, 2F), 0x000000, 0x000000);
+    public static final RegistryObject<EntityType<DeathMothEntity>> DEATHMOTH =
+          registerWithEgg("deathmoth", EntityType.Builder.of( DeathMothEntity::new, MobCategory.CREATURE).sized(0.8F, 2F), 0x000000, 0x000000);
 
     @SubscribeEvent
     public static void onEntityAttributeCreation(EntityAttributeCreationEvent e) {
         e.put(BACTERIA.get(), createBaseAttributes(100, 1, 10, 0).build());
-     //   e.put(DEATHMOTH.get(), createBaseAttributes(1, 0.5, 25, 0).add(Attributes.FLYING_SPEED, 10) .build());
+        e.put(DEATHMOTH.get(), createBaseAttributes(1, 0.5, 25, 0).add(Attributes.FLYING_SPEED, 100) .build());
     }
 
     /**

@@ -32,13 +32,13 @@ public class ClientEvents {
         @SubscribeEvent
         public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(Bacteria.LAYER_LOCATION, Bacteria::createBodyLayer);
-         //   event.registerLayerDefinition(DeathMoth.LAYER_LOCATION, DeathMoth::createBodyLayer);
+            event.registerLayerDefinition(DeathMoth.LAYER_LOCATION, DeathMoth::createBodyLayer);
         }
 
         @SubscribeEvent
         public static void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(ModEntityTypes.BACTERIA.get(), context -> genericEntityRenderer(context, new Bacteria<>(context.bakeLayer(Bacteria.LAYER_LOCATION)), 0.6F, "textures/entity/bacteria.png"));
-          //  event.registerEntityRenderer(ModEntityTypes.DEATHMOTH.get(), context -> genericEntityRenderer(context, new DeathMoth<>(context.bakeLayer(DeathMoth.LAYER_LOCATION)), 0.2F, "textures/entity/deathmoth.png"));
+            event.registerEntityRenderer(ModEntityTypes.DEATHMOTH.get(), context -> genericEntityRenderer(context, new DeathMoth<>(context.bakeLayer(DeathMoth.LAYER_LOCATION)), 0.2F, "textures/entity/deathmoth.png"));
 
         }
 
