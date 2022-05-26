@@ -31,12 +31,13 @@ public class DeathMothEntity extends PathfinderMob implements FlyingAnimal, Enem
     }
 
     protected void registerGoals() {
-        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
-        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 10.0F));
-        this.goalSelector.addGoal(2, new WaterAvoidingRandomFlyingGoal(this, 2.0D));
-        this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.goalSelector.addGoal(1, new HurtByTargetGoal(this));
+        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 20.0F));
+        this.goalSelector.addGoal(5, new WaterAvoidingRandomFlyingGoal(this, 1.0D));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, false));
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
 
 
@@ -91,20 +92,4 @@ public class DeathMothEntity extends PathfinderMob implements FlyingAnimal, Enem
         return true;
     }
 
-    static class DeathMothWanderGoal extends WaterAvoidingRandomFlyingGoal {
-        public DeathMothWanderGoal(PathfinderMob p_186224_, double p_186225_) {
-            super(p_186224_, p_186225_);
-        }
-
-        @Nullable
-        protected Vec3 getPosition() {
-            Vec3 vec3 = null;
-            if (this.mob.isInWater()) {
-                vec3 = LandRandomPos.getPos(this.mob, 15, 5);
-            }
-
-            return vec3 == null ? super.getPosition() : vec3;
-        }
-
-    }
 }
