@@ -28,7 +28,7 @@ public class ModEntityTypes {
             registerWithEgg("bacteria", EntityType.Builder.of(BacteriaEntity::new, MobCategory.CREATURE).sized(0.8F, 2F), 0x000000, 0x000000);
 
     public static final RegistryObject<EntityType<DeathMothEntity>> DEATHMOTH =
-          registerWithEgg("deathmoth", EntityType.Builder.of( DeathMothEntity::new, MobCategory.CREATURE).sized(0.6F, 0.6F), 0x000000, 0x000000);
+            registerWithEgg("deathmoth", EntityType.Builder.of( DeathMothEntity::new, MobCategory.CREATURE).sized(0.6F, 0.6F), 0x000000, 0x000000);
 
     @SubscribeEvent
     public static void onEntityAttributeCreation(EntityAttributeCreationEvent e) {

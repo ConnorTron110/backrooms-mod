@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -18,17 +17,17 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BacteriaEntity extends Monster {
 
-    public BacteriaEntity(EntityType<? extends PathfinderMob> type, Level worldIn) {
-        super((EntityType<? extends Monster>) type, worldIn);
+    public BacteriaEntity(EntityType<? extends BacteriaEntity> type, Level worldIn) {
+        super(type, worldIn);
     }
 
     protected void registerGoals() {
-        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
-        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 10.0F));
-        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.8D));
-        this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.goalSelector.addGoal(1, new HurtByTargetGoal(this));
+        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, false));
+        this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 10.0F));
+        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.8D));
+        this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
     @Override
@@ -47,10 +46,5 @@ public class BacteriaEntity extends Monster {
     }
 
     @Override
-    protected void playStepSound(BlockPos pPos, BlockState pBlock) {
-    }
-    protected boolean shouldDespawnInPeaceful() {
-        return true;
-    }
-
+    protected void playStepSound(BlockPos pPos, BlockState pBlock) {}
 }

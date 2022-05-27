@@ -3,7 +3,6 @@ package io.github.backroomsmod.regstration;
 import io.github.backroomsmod.BackroomsMod;
 import io.github.backroomsmod.block.base.BaseHorizontalBlock;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -14,8 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
-
-
 
 public class BlockReg {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BackroomsMod.MOD_ID);
@@ -32,7 +29,7 @@ public class BlockReg {
 
     public static final RegistryObject<Block> LEVEL0KPLIGHTBLOCK = registerBlock("level0kplightblock",
             () -> new BaseHorizontalBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(-0F).sound(SoundType.GLASS)
-                    .noOcclusion().explosionResistance(999999).lightLevel((state) -> 05)));
+                    .noOcclusion().explosionResistance(999999).lightLevel((state) -> 5)));
 
     public static final RegistryObject<Block> LEVEL0KPFLOORBLOCK = registerBlock("level0kpfloorblock",
             () -> new BaseHorizontalBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(-0F).sound(SoundType.MOSS_CARPET)
